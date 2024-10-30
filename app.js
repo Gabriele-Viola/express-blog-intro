@@ -7,7 +7,7 @@ Creiamo il progetto base con una rotta / che ritorna un h1 con scritto Benvenuto
 
 Creiamo un array dove inserire una lista di almeno 5 post, per ognuno indicare titolo, contenuto, immagine e tags (tags è un array di stringhe)✅
 
-Creiamo poi una rotta /posts che restituisca un oggetto json con la lista dei post e il conteggio, partendo da un array locale.
+Creiamo poi una rotta /posts che restituisca un oggetto json con la lista dei post e il conteggio, partendo da un array locale.✅
 
 La rotta relativa ai post dovrà chiamare la funzione index() dal controller dedicato ( controllers/posts.js )
 
@@ -21,6 +21,7 @@ Create una pagina statica html da cui far partire una chiamata ajax per consumar
 */
 
 const express = require('express')
+const postsController = require('./controllers/postscontroller.js')
 const app = express()
 const port = 3000
 const host = 'http://127.0.0.1'
@@ -28,48 +29,10 @@ const host = 'http://127.0.0.1'
 app.get('/', (req, res) => {
   res.send('<h1>Benvenuto nel mio blog</h1>')
 })
-app.get('/posts', (req, res) => {
-    res.json({
-        data: posts,
-        count:posts.length
-    })
-  })
+app.get('/posts',postsController.index)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${host}:${port}`)
 })
 
 
-const posts = [
-    {
-        title: 'Natale',
-        description: 'Buon natale a tutti',
-        img: '"./immagini-ex-blog-express-js/natale.jpg"',
-        tags:['#Natale2024','#auguri', '#tantiRegali']
-    },
-    {
-        title: 'capodanno',
-        description: 'Buon capodanno a tutti',
-        img: '"./immagini-ex-blog-express-js/capodanno.jpg"',
-        tags:['#capodanno2024','#auguri', '#tantiRegali']
-    },
-    {
-        title: 'carnevale',
-        description: 'Buon carnevale a tutti',
-        img: '"./immagini-ex-blog-express-js/carnevale.jpg"',
-        tags:['#carnevale2024','#auguri', '#tantiRegali']
-    },
-    {
-        title: 'estate',
-        description: 'Buon estate a tutti',
-        img: '"./immagini-ex-blog-express-js/estate.jpg"',
-        tags:['#estate2024','#auguri', '#tantiRegali']
-    },
-    {
-        title: 'halloween',
-        description: 'Buon halloween a tutti',
-        img: '"./immagini-ex-blog-express-js/halloween.jpg"',
-        tags:['#halloween2024','#auguri', '#tantiRegali']
-    }
-
-]
