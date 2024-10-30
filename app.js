@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
 })
 
 
-app.get('/yourPosts', (req, res) => {
+app.get('/app.html', (req, res) => {
 
     let list = ''
     posts.forEach(post => {
