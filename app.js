@@ -15,7 +15,7 @@ Configuriamo gli asset statici sull’applicazione in modo che si possano visual
 
 Testare nel browser.
 Bonus
-Spostiamo l’array dei post in un file separato da importare poi dentro il controller
+Spostiamo l’array dei post in un file separato da importare poi dentro il controller✅
 Creare una nuova rotta con cui stampare la lista in html come ul
 Create una pagina statica html da cui far partire una chiamata ajax per consumare il vostro enpoint json.
 */
