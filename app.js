@@ -16,24 +16,46 @@ Configuriamo gli asset statici sull’applicazione in modo che si possano visual
 Testare nel browser.
 Bonus
 Spostiamo l’array dei post in un file separato da importare poi dentro il controller✅
-Creare una nuova rotta con cui stampare la lista in html come ul
+Creare una nuova rotta con cui stampare la lista in html come ul ✅
 Create una pagina statica html da cui far partire una chiamata ajax per consumare il vostro enpoint json.
 */
 
 const express = require('express')
 const postsController = require('./controllers/postscontroller.js')
+const posts = require('./data/posts.js')
 const app = express()
 app.use(express.static('public'))
 const port = 3000
 const host = 'http://127.0.0.1'
 
 app.get('/', (req, res) => {
-  res.send('<h1>Benvenuto nel mio blog</h1>')
+    res.send('<h1>Benvenuto nel mio blog</h1>')
 })
-app.get('/posts',postsController.index)
+
+
+app.get('/yourPosts', (req, res) => {
+
+    let list = ''
+    posts.forEach(post => {
+        list += `<li>${post.title}</li>`
+    });
+
+    const unorderList =
+        `
+    <ul>${list}</ul>
+    `
+
+    res.send(unorderList)
+})
+
+
+
+app.get('/posts', postsController.index)
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${host}:${port}`)
+    console.log(`Example app listening on port ${host}:${port}`)
 })
+
+
 
 
