@@ -9,9 +9,9 @@ Creiamo un array dove inserire una lista di almeno 5 post, per ognuno indicare t
 
 Creiamo poi una rotta /posts che restituisca un oggetto json con la lista dei post e il conteggio, partendo da un array locale.✅
 
-La rotta relativa ai post dovrà chiamare la funzione index() dal controller dedicato ( controllers/posts.js )
+La rotta relativa ai post dovrà chiamare la funzione index() dal controller dedicato ( controllers/posts.js )✅
 
-Configuriamo gli asset statici sull’applicazione in modo che si possano visualizzare le immagini associate ad ogni post.
+Configuriamo gli asset statici sull’applicazione in modo che si possano visualizzare le immagini associate ad ogni post.✅
 
 Testare nel browser.
 Bonus
@@ -23,6 +23,7 @@ Create una pagina statica html da cui far partire una chiamata ajax per consumar
 const express = require('express')
 const postsController = require('./controllers/postscontroller.js')
 const app = express()
+app.use(express.static('public'))
 const port = 3000
 const host = 'http://127.0.0.1'
 

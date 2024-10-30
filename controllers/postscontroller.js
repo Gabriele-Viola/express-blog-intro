@@ -3,31 +3,31 @@ const posts = [
     {
         title: 'Natale',
         description: 'Buon natale a tutti',
-        img: '"./immagini-ex-blog-express-js/natale.jpg"',
+        img: '"./img/natale.jpg"',
         tags: ['#Natale2024', '#auguri', '#tantiRegali']
     },
     {
         title: 'capodanno',
         description: 'Buon capodanno a tutti',
-        img: '"./immagini-ex-blog-express-js/capodanno.jpg"',
+        img: '"./img/capodanno.jpg"',
         tags: ['#capodanno2024', '#auguri', '#tantiRegali']
     },
     {
         title: 'carnevale',
         description: 'Buon carnevale a tutti',
-        img: '"./immagini-ex-blog-express-js/carnevale.jpg"',
+        img: '"./img/carnevale.jpg"',
         tags: ['#carnevale2024', '#auguri', '#tantiRegali']
     },
     {
         title: 'estate',
         description: 'Buon estate a tutti',
-        img: '"./immagini-ex-blog-express-js/estate.jpg"',
+        img: '"./img/estate.jpg"',
         tags: ['#estate2024', '#auguri', '#tantiRegali']
     },
     {
         title: 'halloween',
         description: 'Buon halloween a tutti',
-        img: '"./immagini-ex-blog-express-js/halloween.jpg"',
+        img: '"./img/halloween.jpg"',
         tags: ['#halloween2024', '#auguri', '#tantiRegali']
     }
 
