@@ -22,18 +22,19 @@ Create una pagina statica html da cui far partire una chiamata ajax per consumar
 
 const express = require('express')
 const postsController = require('./controllers/postscontroller.js')
-const posts = require('./data/posts.js')
+
 const app = express()
-app.use(express.static('public'))
+const public = app.use(express.static('public'))
 const port = 3000
 const host = 'http://127.0.0.1'
 
-app.get('/', (req, res) => {
-    res.send('<h1>Benvenuto nel mio blog</h1>')
+app.get('/app.html', (req, res) => {
+
+    res.send('<h1>Benvenuto nel mio </h1>')
 })
 
 
-app.get('/app.html', (req, res) => {
+app.get('/yourPosts', (req, res) => {
 
     let list = ''
     posts.forEach(post => {
@@ -55,6 +56,7 @@ app.get('/posts', postsController.index)
 app.listen(port, () => {
     console.log(`Example app listening on port ${host}:${port}`)
 })
+
 
 
 
